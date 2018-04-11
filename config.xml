@@ -1,31 +1,41 @@
-// JavaScript Document
+<?xml version="1.0" encoding="utf-8"?>
 
-$(document).ready(function(e) {
-	document.addEventListener("deviceready", function(){
-		$("#disp table td").eq(3).text(device.model);
-		$("#disp table td").eq(5).text(device.cordova);
-		$("#disp table td").eq(7).text(device.platform);
-		$("#disp table td").eq(9).text(device.version);
-		$("#disp table td").eq(11).text(device.uuid);
-		document.addEventListener("pause",function(){
-			escribehistoria ("la app se pauso");
-		},false);//pause
-		document.addEventListener("resume",function(){
-			escribehistoria ("la app se reinicio");
-		},false);//resume
-		document.addEventListener("pause",function(){
-			escribehistoria ("la app se conecto a la red");
-		},false);//se conecto
-		document.addEventListener("pause",function(){
-			escribehistoria ("la app se desconecto de la red");
-		},false);//se desconecto
-		
-		
-	}, false);//ready device
-	
-	
-});//document
-
-function escribehistoria(accion){
-	$("#eHistoria").append('<li>'+accion+'<li>');
-}
+<widget xmlns ="http://www.w3.org/ns/widgets"
+ xmlns:gap = "http://phonegap.com/ns/1.0"
+  id ="com.phonegap.app1"
+   version ="1.0.0">
+   
+   <name>app1-2018 Datos del Dispositivo</name>
+   
+   <description>
+   Aplicacion que muestra los Datos del Dispositivo
+   </description>
+   
+   <author href="https://buid.phonegap.com" emaill="joque.cbtis16@gmail.com">
+     Joquebeth Silam Cruz Armenta 
+	 </author>
+	 
+	 <!--Personaliza la aplicacion y plataforma -->
+	 <preference name="orientation"  value="default"/>
+	 <!--preference name="orientation"  value="portrait"/>
+	 <preference name="orientation" value="landscape"/>-->
+	 <preference name="target-device"  value="universal"/>
+	 <preference name="fullscreen"  value="true"/>
+	 <preference name="android-installLocation"  value="auto"/>
+	 <preference name="permissions" value="INTERNET"/>
+	 
+	 <!--Plugins-->
+	 <!--Core plugins-->
+<plugin name="cordova-plugin-device" spec="~1.1.4"/>
+<plugin name="cordova-plugin-vibration" spec="~2.1.3"/>
+<plugin name="cordova-plugin-dialogs" spec="~1.3.1"/>
+	 
+<!-- <plugin name="cordova-plugin-geolocation" source="npm"/>-->
+  <!--Third part pluging-->
+  
+  <!--Colocar icono app-->
+  
+  <ico src="res/android/mdpi.png"/>
+  
+  </widget>
+	 
